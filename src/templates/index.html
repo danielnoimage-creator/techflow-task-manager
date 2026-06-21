@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<a href="{{ url_for('create') }}">
+    Nova Tarefa
+</a>
+
+<form method="GET">
+
+    <select name="prioridade">
+        <option value="">Todas</option>
+        <option value="Alta">Alta</option>
+        <option value="Média">Média</option>
+        <option value="Baixa">Baixa</option>
+    </select>
+
+    <button type="submit">
+        Filtrar
+    </button>
+
+</form>
+
+<hr>
+
+{% for tarefa in tarefas %}
+
+<div class="card">
+
+    <h3>{{ tarefa.titulo }}</h3>
+
+    <p>{{ tarefa.descricao }}</p>
+
+    <p><strong>Prioridade:</strong> {{ tarefa.prioridade }}</p>
+
+    <p><strong>Status:</strong> {{ tarefa.status }}</p>
+
+    <a href="{{ url_for('edit', id=tarefa.id) }}">
+        Editar
+    </a>
+
+    <a href="{{ url_for('delete', id=tarefa.id) }}">
+        Excluir
+    </a>
+
+</div>
+
+{% else %}
+
+<p>Nenhuma tarefa cadastrada.</p>
+
+{% endfor %}
+
+{% endblock %}

@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Editar Tarefa</h2>
+
+<form method="POST">
+
+    <input
+        type="text"
+        name="titulo"
+        value="{{ tarefa.titulo }}"
+        required
+    >
+
+    <textarea
+        name="descricao"
+        required
+    >{{ tarefa.descricao }}</textarea>
+
+    <select name="prioridade">
+
+        <option value="Alta" {% if tarefa.prioridade == "Alta" %}selected{% endif %}>
+            Alta
+        </option>
+
+        <option value="Média" {% if tarefa.prioridade == "Média" %}selected{% endif %}>
+            Média
+        </option>
+
+        <option value="Baixa" {% if tarefa.prioridade == "Baixa" %}selected{% endif %}>
+            Baixa
+        </option>
+
+    </select>
+
+    <select name="status">
+
+        <option value="A Fazer" {% if tarefa.status == "A Fazer" %}selected{% endif %}>
+            A Fazer
+        </option>
+
+        <option value="Em Progresso" {% if tarefa.status == "Em Progresso" %}selected{% endif %}>
+            Em Progresso
+        </option>
+
+        <option value="Concluído" {% if tarefa.status == "Concluído" %}selected{% endif %}>
+            Concluído
+        </option>
+
+    </select>
+
+    <button type="submit">
+        Atualizar
+    </button>
+
+</form>
+
+{% endblock %}

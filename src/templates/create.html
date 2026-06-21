@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Nova Tarefa</h2>
+
+<form method="POST">
+
+    <input
+        type="text"
+        name="titulo"
+        placeholder="Título"
+        required
+    >
+
+    <textarea
+        name="descricao"
+        placeholder="Descrição"
+        required
+    ></textarea>
+
+    <select name="prioridade">
+        <option value="Alta">Alta</option>
+        <option value="Média">Média</option>
+        <option value="Baixa">Baixa</option>
+    </select>
+
+    <select name="status">
+        <option value="A Fazer">A Fazer</option>
+        <option value="Em Progresso">Em Progresso</option>
+        <option value="Concluído">Concluído</option>
+    </select>
+
+    <button type="submit">
+        Salvar
+    </button>
+
+</form>
+
+{% endblock %}
