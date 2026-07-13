@@ -197,6 +197,7 @@ Instituição: **UNIFECAF**
 
 ---
 
-## 📄 Licença
 
-Projeto desenvolvido exclusivamente para fins acadêmicos
+## Status do Projeto
+
+Projeto finalizado para fins acadêmicos, contendo sistema Flask, testes automatizados, documentação UML e metodologia Kanban.
