@@ -12,7 +12,7 @@ sys.path.append(
 
 from app import app
 
-
+# Testa se a página inicial é carregada corretamente.
 def test_home_page():
 
     client = app.test_client()
@@ -21,7 +21,7 @@ def test_home_page():
 
     assert response.status_code == 200
 
-
+# Testa se a página de criação de tarefas é carregada corretamente.
 def test_create_page():
 
     client = app.test_client()
