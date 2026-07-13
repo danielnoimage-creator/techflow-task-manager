@@ -11,7 +11,7 @@ db.init_app(app)
 with app.app_context():
     db.create_all()
 
-
+# Exibe a lista de tarefas cadastradas
 @app.route("/")
 def index():
     prioridade = request.args.get("prioridade")
@@ -28,7 +28,7 @@ def index():
         tarefas=tarefas
     )
 
-
+# Cria uma nova tarefa
 @app.route("/create", methods=["GET", "POST"])
 def create():
 
@@ -48,7 +48,7 @@ def create():
 
     return render_template("create.html")
 
-
+# Edita uma tarefa existente
 @app.route("/edit/<int:id>", methods=["GET", "POST"])
 def edit(id):
 
@@ -70,7 +70,7 @@ def edit(id):
         tarefa=tarefa
     )
 
-
+# Remove uma tarefa
 @app.route("/delete/<int:id>")
 def delete(id):
 
