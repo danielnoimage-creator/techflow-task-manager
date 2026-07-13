@@ -199,4 +199,4 @@ Instituição: **UNIFECAF**
 
 ## 📄 Licença
 
-Projeto desenvolvido exclusivamente para fins acadêmicos.
+Projeto desenvolvido exclusivamente para fins acadêmicos
